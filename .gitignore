@@ -1,0 +1,26 @@
+# Ignore bundler config
+.bundle/
+
+# Ignore log files and temp files
+log/*
+tmp/
+
+# Ignore environment variables file
+.env
+
+# Ignore cached files
+*.gem
+/vendor/bundle/
+
+# Ignore test and coverage directories
+/test/tmp/
+/coverage/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+*~
+.idea/
+.vscode/
