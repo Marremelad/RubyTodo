@@ -62,6 +62,7 @@ end
 #Main program.
 
 while true
+  system("clear")
   tasks = []
   menu_choice = display_menu()
 
