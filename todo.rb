@@ -1,16 +1,28 @@
 #Display tasks.
-def display_tasks(tasks)
-  if tasks.length == 0 #If there are no tasks, return.
+def display_menu(tasks)
+  puts "1.Tasks\n2.Quit"
+  user_input = gets.chomp
+
+  if user_input == "1"
+    display_tasks(tasks)
+  elsif user_input == "2"
     return
   end
+end
 
-  puts "\nYou have the following tasks:"
+def display_tasks(tasks)
+  if tasks.length == 0 #If there are no tasks, return.
+    puts "You have no created tasks."
+    add_task(tasks)
+  end
+
+  puts "\nCurrent tasks:"
   tasks.each_with_index do |task, index| #Display the tasks.
     puts "#{index + 1}. #{task[:name]} - #{task[:completed]}
 \nPress the tasks number followed by enter to change it's status"
 
-    chosen_task = gets.chomp.to_i
-    mark_task((chosen_task - 1), tasks)
+    # chosen_task = gets.chomp.to_i #Get the task number.
+    # mark_task((chosen_task - 1), tasks)
   end
 end
 
@@ -48,6 +60,10 @@ def mark_task(index, tasks)
   puts "#{tasks[index][:completed]}"
 end
 
-task = []
-display_tasks(task)
-add_task(task)
+#Main program.
+tasks = []
+display_menu(tasks)
+
+
+
+
