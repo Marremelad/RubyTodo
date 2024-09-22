@@ -1,12 +1,16 @@
 #Display tasks.
 def display_menu(tasks)
-  puts "1.Tasks\n2.Quit"
+  puts "1.Tasks\n2.Quit\nPress a menu choice number followed by enter to access that page.
+press 'e' followed by enter to exit the program"
+
   user_input = gets.chomp
 
   if user_input == "1"
     display_tasks(tasks)
   elsif user_input == "2"
-    return
+    puts "Option number 2"
+  elsif user_input == "e"
+      return false
   end
 end
 
@@ -18,11 +22,11 @@ def display_tasks(tasks)
 
   puts "\nCurrent tasks:"
   tasks.each_with_index do |task, index| #Display the tasks.
-    puts "#{index + 1}. #{task[:name]} - #{task[:completed]}
-\nPress the tasks number followed by enter to change it's status"
+    puts "#{index + 1}. #{task[:name]} - #{task[:completed] ? "Complete" : "Incomplete"}
+Press the tasks number followed by enter to change it's status.\nPress just enter to return to the main menu."
 
-    # chosen_task = gets.chomp.to_i #Get the task number.
-    # mark_task((chosen_task - 1), tasks)
+    chosen_task = gets.chomp #Get the task number.
+    chosen_task.empty? ? return : mark_task((chosen_task.to_i - 1), tasks)
   end
 end
 
@@ -43,8 +47,8 @@ end
 
 #Mark the task as complete or incomplete.
 def mark_task(index, tasks)
-  puts "#{tasks[index][:name]} status: #{tasks[index][:completed]}
-\nWould you like to change the status of #{tasks[index][:name]}? (yes/no)"
+  puts "#{tasks[index][:name]} - status - #{tasks[index][:completed] ? "Complete" :"Incomplete"}
+Would you like to change the status of #{tasks[index][:name]}? (yes/no)"
 
   user_input = gets.chomp
 
@@ -56,13 +60,19 @@ def mark_task(index, tasks)
       end
   else
     puts "No changes made."
+    return
   end
-  puts "#{tasks[index][:completed]}"
+
+  puts tasks[index][:completed] ? "#{tasks[index][:name]} is now marked as completed" :
+         "#{task[index][:name]} is now marked as uncompleted"
 end
 
 #Main program.
-tasks = []
-display_menu(tasks)
+
+while true
+  tasks = []
+  display_menu(tasks) ? next : break
+end
 
 
 
