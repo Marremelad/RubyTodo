@@ -48,7 +48,7 @@ Would you like to change the status of #{tasks[index][:name]}? (yes/no)"
     if !tasks[index][:completed]
       tasks[index][:completed] = true
     else
-      tasks[index][:completed] == false
+      tasks[index][:completed] = false
       end
   else
     puts "No changes made."
@@ -56,14 +56,13 @@ Would you like to change the status of #{tasks[index][:name]}? (yes/no)"
   end
 
   puts tasks[index][:completed] ? "#{tasks[index][:name]} is now marked as completed" :
-         "#{task[index][:name]} is now marked as uncompleted"
+         "#{tasks[index][:name]} is now marked as uncompleted"
 end
 
 #Main program.
-
+tasks = []
 while true
   system("clear")
-  tasks = []
   menu_choice = display_menu()
 
   case menu_choice
@@ -77,7 +76,4 @@ while true
     puts "Not a valid option"
   end
 end
-
-
-
 
