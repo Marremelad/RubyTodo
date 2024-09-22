@@ -1,17 +1,9 @@
 #Display tasks.
-def display_menu(tasks)
+def display_menu()
   puts "1.Tasks\n2.Quit\nPress a menu choice number followed by enter to access that page.
 press 'e' followed by enter to exit the program"
 
-  user_input = gets.chomp
-
-  if user_input == "1"
-    display_tasks(tasks)
-  elsif user_input == "2"
-    puts "Option number 2"
-  elsif user_input == "e"
-      return false
-  end
+  return gets.chomp
 end
 
 def display_tasks(tasks)
@@ -71,7 +63,18 @@ end
 
 while true
   tasks = []
-  display_menu(tasks) ? next : break
+  menu_choice = display_menu()
+
+  case menu_choice
+  when "1"
+    display_tasks(tasks)
+  when "2"
+    puts "Option 2"
+  when "e"
+    break
+  else
+    puts "Not a valid option"
+  end
 end
 
 
