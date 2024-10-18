@@ -1,7 +1,7 @@
 # Ruby Todo Console App 📝✅
 
 ## Description
-This is a simple application that lets the user create a task and update its status. I use this small project to learn the basics of Ruby.
+This is a simple application that lets the user create a task and update its status. I used this small project to learn the basics of Ruby.
 
 ### Features
 * Create a task
