@@ -11,10 +11,10 @@ This is a simple application that lets the user create a task and update its sta
 <img src="https://github.com/Marremelad/AssetsAndImages/raw/main/RubyTodoScreenRecording.gif" height="300" width="500" alt="Application Demo">
 
 ### Requirements
-* .NET 8 or higher
+* Ruby 3.0.2 or higher
 
 ### Get started
-If you are using Visual Studio or any other IDE with an integrated repo-cloning function use it with this URL - https://github.com/Marremelad/RubyTodo.git
+If you are using RubyMine or any other IDE with an integrated repo-cloning function use it with this URL - https://github.com/Marremelad/RubyTodo.git
 then open the solution and run the program.
 
 Else, do the following.
